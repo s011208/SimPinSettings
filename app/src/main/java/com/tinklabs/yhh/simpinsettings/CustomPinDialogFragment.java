@@ -17,7 +17,7 @@ public class CustomPinDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         EditText editText = new EditText(getActivity());
-        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+        editText.setInputType(InputType.TYPE_NUMBER_FLAG_SIGNED);
         return new AlertDialog.Builder(getActivity()).setTitle("Set custom pin")
                 .setView(editText).setPositiveButton(android.R.string.ok, (dialogInterface, i) -> {
                     if (getActivity() instanceof Callback) {

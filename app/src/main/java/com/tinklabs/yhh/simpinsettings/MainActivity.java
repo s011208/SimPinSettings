@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements CustomPinDialogFr
         try {
             Method changeIccLockPassword = mIccCard.getClass().getMethod("changeIccLockPassword", new Class[]{String.class, String.class, Message.class});
             changeIccLockPassword.invoke(mIccCard, new Object[]{oldPassWord, newPassword, handler.obtainMessage(1000)});
-            log("#### change pin success, old pin: " + oldPassWord + ", new pin: " + newPassword + " ####");
+            log("#### request to change pin from old pin: " + oldPassWord + " to new pin: " + newPassword + " ####");
         } catch (Exception e) {
             log(e.toString());
             log("#### change pin fail ####");
